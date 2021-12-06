@@ -1,0 +1,12 @@
+name: ppo
+channels:
+    - defaults
+dependencies:
+    - python=3.7
+    - pip:
+        - gym
+        - matplotlib
+        - stable-baselines3
+        - box2d-py
+        - h5py
+        - mujoco-py==1.50.1.68
