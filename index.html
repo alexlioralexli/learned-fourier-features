@@ -212,31 +212,85 @@
       </table> -->
       <center><span style="font-size:20px;"><a href='https://nips.cc/Conferences/2021'>Neural Information Processing Systems (NeurIPS), 2021</a></span></center>
 
-      <div class="table-like" style="justify-content:space-evenly;max-width:700px;margin:auto;padding:5px">
-        <div><center><span style="font-size:28px"><a href="https://openreview.net/pdf?id=uTqvj8i3xv">[Paper]</a></span></center></div>
+      <div class="table-like" style="justify-content:space-evenly;max-width:450px;margin:auto;padding:5px">
+        <div><center><span style="font-size:28px"><a href="https://arxiv.org/abs/2112.03257">[Paper]</a></span></center></div>
         <div><center><span style="font-size:28px"><a href='https://github.com/alexlioralexli/learned-fourier-features'>[GitHub Code]</a></span></center> </div>
-        <div><center><span style="font-size:28px"><a href='https://recorder-v3.slideslive.com/#/share?share=56428&s=9d965df2-8a34-4304-b4c0-cc0c60c46249' target="_blank">[Talk]</a></span></center> </div>
+        <!-- <div><center><span style="font-size:28px"><a href='https://recorder-v3.slideslive.com/#/share?share=56428&s=9d965df2-8a34-4304-b4c0-cc0c60c46249' target="_blank">[Talk]</a></span></center> </div> -->
       </div>
 
       <center>
       <iframe width="768" height="432" max-width="100%" src="https://recorder-v3.slideslive.com/#/share?share=56428&s=9d965df2-8a34-4304-b4c0-cc0c60c46249" frameborder="0" allowfullscreen></iframe></center>
       <br>
 
+                      <!-- <div class="container" style="background-color:white; padding: 0px;">
+                    <div class="row m-2">
+
+                        <div class="col-md-12 col-xs-12 my-auto p-2">
+                            <p class="centered admin"></p>
+                                        <div class="sponsor-video-title text-muted"></div>
+            <div id="presentation-embed-38968832" class="slp my-auto"></div>
+            <script src='https://slideslive.com/embed_presentation.js'></script>
+            <script>
+            embed = new SlidesLiveEmbed('presentation-embed-38968832', {
+                presentationId: '38968832',
+                autoPlay: false, // change to true to autoplay the embedded presentation
+                verticalEnabled: true,
+                allowHiddenControlsWhenPaused: true,
+                hideTitle: true
+            });
+            </script>
+
+
+
+            
+                        </div>
+                    </div>
+                </div> -->
+
       <div style="width:800px; margin:0 auto; text-align=right;">
         We propose a simple architecture for deep reinforcement learning by embedding inputs into a learned Fourier basis and show that it improves the sample efficiency of both state-based and image-based RL. We perform infinite-width analysis of our architecture using the Neural Tangent Kernel and theoretically show that tuning the initial variance of the Fourier basis is equivalent to functional regularization of the learned deep network. That is, these learned Fourier features allow for adjusting the degree to which networks underfit or overfit different frequencies in the training data, and hence provide a controlled mechanism to improve the stability and performance of RL optimization. Empirically, this allows us to prioritize learning low-frequency functions and speed up learning by reducing networks’ susceptibility to noise in the optimization process, such as during Bellman updates. Experiments on standard state-based and image-based RL benchmarks show clear benefits of our architecture over the baselines.
       </div>
       <br><hr>
 
+      <center><h1>Learned Fourier Feature Architecture</h1></center>
+      <div style="width:800px; margin:0 auto; text-align=right">
+        Controlling the initialization variance of the Fourier basis changes the frequency-dependent convergence rate of the network. High variance leads to overfitting, whereas low variance yields a smooth learned function. 
+      </div>
+      <center><a href="resources/method.png"><img src = "resources/method.png" width="800px" ></img></a><br></center>
+      <hr>
+
+
+      <center><h1>Controlling Frequency-dependent Learning Rates</h1></center><br/>
+            <div style="width:800px; margin:0 auto; text-align=right">
+        Training Q-networks via the Bellman update can potentially amplify noise that is present due to bootstrapping, function approximation, and SGD. The "spiky" resulting function is inaccurate and can often diverge. Vanilla MLPs are susceptible to this problem, but our learned Fourier feature architecture -- by not fitting high frequencies in the target values -- can minimize the impact of noise and learn accurately. 
+      </div>
+      <center><a href="resources/setting.png"><img src = "resources/setting.png" width="800px"></img></a><br></center>
+      <br/><hr>
+
+
+            <center id="sourceCode"><h1>Source Code</h1></center>
+            <div style="width:650px; margin:0 auto; text-align=right">
+            We have released our implementation in PyTorch on the github page. Try our code!
+            </div>
+            <table align=center width=600px>
+              <tr>
+                <!-- <p style="margin-top:4px;"></p> -->
+                <td width=600px align=center>
+                  <center><span style="font-size:28px"><a href='https://github.com/alexlioralexli/learned-fourier-features'>[GitHub]</a></span></center>
+                </td>
+              </tr>
+            </table>
+            <br><hr>
 
               <center><h1>Paper and Bibtex</h1></center>
               <table align=center width=850px>
               <tr>
               <td width="30%" align=left>
               <!-- <p style="margin-top:4px;"></p> -->
-              <a href="https://openreview.net/pdf?id=uTqvj8i3xv"><img style="height:150px" src="resources/thumbnail.png"/></a>
+              <a href="https://arxiv.org/pdf/2112.03257.pdf"><img style="height:150px" src="resources/thumbnail.jpeg"/></a>
               <center>
-              <span style="font-size:20pt"><a href="https://openreview.net/pdf?id=uTqvj8i3xv">[Paper]</a>
-              <span style="font-size:20pt"><a href="https://openreview.net/forum?id=uTqvj8i3xv">[ArXiv]</a>
+              <span style="font-size:20pt"><a href="https://arxiv.org/pdf/2112.03257.pdf">[Paper]</a>
+              <span style="font-size:20pt"><a href="https://arxiv.org/abs/2112.03257">[ArXiv]</a>
               <!-- <span style="font-size:20pt"><a href="resources/slides.pdf">[Slides]</a></span>
               <span style="font-size:20pt"><a href="resources/poster.pdf">[Poster]</a></span> -->
               </center>
