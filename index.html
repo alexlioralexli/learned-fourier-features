@@ -247,21 +247,21 @@
                     </div>
                 </div> -->
 
-      <div style="width:800px; margin:0 auto; text-align=right;">
+      <div style="width:800px; margin:0 auto; text-align:left;">
         We propose a simple architecture for deep reinforcement learning by embedding inputs into a learned Fourier basis and show that it improves the sample efficiency of both state-based and image-based RL. We perform infinite-width analysis of our architecture using the Neural Tangent Kernel and theoretically show that tuning the initial variance of the Fourier basis is equivalent to functional regularization of the learned deep network. That is, these learned Fourier features allow for adjusting the degree to which networks underfit or overfit different frequencies in the training data, and hence provide a controlled mechanism to improve the stability and performance of RL optimization. Empirically, this allows us to prioritize learning low-frequency functions and speed up learning by reducing networks’ susceptibility to noise in the optimization process, such as during Bellman updates. Experiments on standard state-based and image-based RL benchmarks show clear benefits of our architecture over the baselines.
       </div>
       <br><hr>
 
       <center><h1>Learned Fourier Feature Architecture</h1></center>
-      <div style="width:800px; margin:0 auto; text-align=right">
-        Controlling the initialization variance of the Fourier basis changes the frequency-dependent convergence rate of the network. High variance leads to overfitting, whereas low variance yields a smooth learned function. 
+      <div style="width:800px; margin:0 auto; text-align:left">
+        Controlling the initialization variance of the Fourier basis changes the frequency-dependent convergence rate of the network. High variance leads to overfitting, whereas low variance yields a smooth function. 
       </div>
       <center><a href="resources/method.png"><img src = "resources/method.png" width="800px" ></img></a><br></center>
       <hr>
 
 
       <center><h1>Controlling Frequency-dependent Learning Rates</h1></center><br/>
-            <div style="width:800px; margin:0 auto; text-align=right">
+            <div style="width:800px; margin:0 auto; text-align:left">
         Training Q-networks via the Bellman update can potentially amplify noise that is present due to bootstrapping, function approximation, and SGD. The "spiky" resulting function is inaccurate and can often diverge. Vanilla MLPs are susceptible to this problem, but our learned Fourier feature architecture -- by not fitting high frequencies in the target values -- can minimize the impact of noise and learn accurately. 
       </div>
       <center><a href="resources/setting.png"><img src = "resources/setting.png" width="800px"></img></a><br></center>
@@ -269,7 +269,7 @@
 
 
             <center id="sourceCode"><h1>Source Code</h1></center>
-            <div style="width:650px; margin:0 auto; text-align=right">
+            <div style="width:650px; margin:0 auto; text-align:center">
             We have released our implementation in PyTorch on the github page. Try our code!
             </div>
             <table align=center width=600px>
